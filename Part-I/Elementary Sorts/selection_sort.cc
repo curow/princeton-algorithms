@@ -5,13 +5,13 @@ using namespace std;
 void selection_sort(vector<int> &a) {
     int n = a.size();
     for (int i = 0; i < n; ++i) {
-        int k = i;
+        int min = i;
         for (int j = i + 1; j < n; ++j) {
-            if (a[j] < a[k]) {
-                k = j;
+            if (a[j] < a[min]) {
+                min = j;
             }
         }
-        swap(a[i], a[k]);
+        swap(a[i], a[min]);
     }
 }
 
