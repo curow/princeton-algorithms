@@ -5,12 +5,8 @@ using namespace std;
 void insertion_sort(vector<int> &a) {
     int n = a.size();
     for (int i = 1; i < n; ++i) {
-        for (int j = i; j > 0; --j) {
-            if (a[j] < a[j - 1]) {
-                swap(a[j], a[j - 1]);
-            } else {
-                break;
-            }
+        for (int j = i; j >= 1 && a[j] < a[j - 1]; --j) {
+            swap(a[j], a[j - 1]);
         }
     }
 }
