@@ -12,7 +12,7 @@ void merge_sort(vector<int> &a, int lo, int hi) {
     for (int k = lo; k <= hi; ++k) {
         if (i > mid) a[k] = aux[j++];
         else if (j > hi) a[k] = aux[i++];
-        else if (a[i] <= a[j]) a[k] = aux[i++];
+        else if (aux[i] <= aux[j]) a[k] = aux[i++];
         else a[k] = aux[j++];
     }
 }
