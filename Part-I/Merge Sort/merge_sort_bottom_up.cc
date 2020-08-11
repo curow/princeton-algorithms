@@ -2,11 +2,9 @@
 
 using namespace std;
 
-int main() {
-    vector<int> a = {1, 3, -1, 4, 1000, 5, 20, 30};
-    const int n = a.size();
-    vector<int> aux(n);
-    auto merge = [&](int lo, int mid, int hi) -> void {
+void merge_sort(vector<int> &a, vector<int> &aux) {
+    int n = a.size();
+    auto merge = [&](int lo, int mid, int hi) {
         if (a[mid] <= a[mid + 1]) return;
         for (int k = lo; k <= hi; ++k) aux[k] = a[k];
         int i = lo, j = mid + 1;
@@ -23,6 +21,12 @@ int main() {
             merge(lo, mid, hi);
         }
     }
+}
+
+int main() {
+    vector<int> a = {1, 3, -1, 4, 1000, 5, 20, 30};
+    vector<int> aux(a.size());
+    merge_sort(a, aux);
     for (int x : a) cout << x << " ";
     cout << endl;
     return 0;
