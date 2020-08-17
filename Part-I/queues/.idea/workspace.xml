@@ -19,13 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1e4f978-b3bd-4ae1-84e9-9e1170bce808" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Deque.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Permutation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RandomizedQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithms, Part I.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms, Part I.iml" afterDir="false" />
-    </list>
+    <list default="true" id="c1e4f978-b3bd-4ae1-84e9-9e1170bce808" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,6 +119,7 @@
       <workItem from="1596470649761" duration="3058000" />
       <workItem from="1596505224773" duration="1075000" />
       <workItem from="1596548273782" duration="6424000" />
+      <workItem from="1597586532949" duration="242000" />
     </task>
     <servers />
   </component>

@@ -8,8 +8,9 @@
  *
  ******************************************************************************/
 
-import java.util.Comparator;
 import edu.princeton.cs.algs4.StdDraw;
+
+import java.util.Comparator;
 
 public class Point implements Comparable<Point> {
 
@@ -59,7 +60,15 @@ public class Point implements Comparable<Point> {
      * @return the slope between this point and the specified point
      */
     public double slopeTo(Point that) {
-        /* YOUR CODE HERE */
+        if (this.compareTo(that) == 0) {
+            return Double.NEGATIVE_INFINITY;
+        } else if (this.x == that.x) {
+            return Double.POSITIVE_INFINITY;
+        } else if (this.y == that.y) {
+            return 0;
+        } else {
+            return (double) (that.y - this.y) / (that.x - this.x);
+        }
     }
 
     /**
@@ -75,7 +84,13 @@ public class Point implements Comparable<Point> {
      *         argument point
      */
     public int compareTo(Point that) {
-        /* YOUR CODE HERE */
+        if (this.y < that.y) {
+            return -1;
+        } else if (this.y > that.y) {
+            return 1;
+        } else {
+            return Integer.compare(this.x, that.x);
+        }
     }
 
     /**
@@ -85,7 +100,11 @@ public class Point implements Comparable<Point> {
      * @return the Comparator that defines this ordering on points
      */
     public Comparator<Point> slopeOrder() {
-        /* YOUR CODE HERE */
+        return (o1, o2) -> {
+            double s1 = this.slopeTo(o1);
+            double s2 = this.slopeTo(o2);
+            return Double.compare(s1, s2);
+        };
     }
 
 
@@ -105,6 +124,29 @@ public class Point implements Comparable<Point> {
      * Unit tests the Point data type.
      */
     public static void main(String[] args) {
-        /* YOUR CODE HERE */
+        Point a = new Point(0, 0);
+        Point b = new Point(1000, 0);
+        Point c = new Point(0, 1000);
+        Point d = new Point(1000, 1000);
+        assert a.slopeTo(b) == 0;
+        assert a.slopeTo(c) == Double.POSITIVE_INFINITY;
+        assert a.slopeTo(a) == Double.NEGATIVE_INFINITY;
+        assert a.slopeTo(d) == 1.0;
+        Comparator<Point> BY_SLOPE = a.slopeOrder();
+        assert BY_SLOPE.compare(b, d) < 0;
+        assert BY_SLOPE.compare(d, c) < 0;
+
+        StdDraw.enableDoubleBuffering();
+        StdDraw.setXscale(-1000, 2000);
+        StdDraw.setYscale(-1000, 2000);
+        a.draw();
+        b.draw();
+        c.draw();
+        d.draw();
+        a.drawTo(b);
+        b.drawTo(d);
+        d.drawTo(c);
+        c.drawTo(a);
+        StdDraw.show();
     }
 }
